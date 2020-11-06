@@ -214,7 +214,15 @@ Practice accessing data above by console.log-ing following items:
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 
-
+function changeName(array, index, name){
+  for(i in array){
+  if(array[i][index] === ["id"]){
+    array[i].name = name;
+  }
+  }
+  return array;
+}
+console.log(changeName(artists, 9, "Vincent Van Gogh"));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Create a function called `getArtistByIndex` that takes two arguments:
