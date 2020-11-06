@@ -229,9 +229,9 @@ Create a function called `getArtistByIndex` that takes two arguments:
 */
 function getArtistByIndex(array, index) {
   
-  console.log(`The artist at index ${array[index].id} is ${array[index].name}`);
+  return (`the artist at index ${array[index].id} is ${array[index].name}`);
 }  
-getArtistByIndex(artists, 0);
+console.log(getArtistByIndex(artists, 0));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -242,16 +242,16 @@ example born in 1901 and died in 1959 - included / born in 1889 and died in 1925
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(array){
-     for(let i in array){
-        if(artists[i].years === "1901 - 1959"){
-          artists.push(artists[i].years);
-        }else if(artists[i].side !== "1901 - 1959"){
-          artists.push(artists[i].years);
-      }
-    }
-     return array;
-  }
-  console.log(get20s(artists));
+  const names = [];
+  for(let i in array){
+     if(artists[i].years.slice(0,4) >= 1900 && artists[i].years.slice(0,4) < 2000 && artists[i].years.slice(7,11) >= 1900 && artists[i].years.slice(7,11) < 2000){
+       names.push(artists[i].name);
+   }
+ }
+  return names;
+}
+console.log(get20s(artists));
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Create a function called `removeArtist` that takes two arguments:
@@ -265,7 +265,8 @@ Create a function called `removeArtist` that takes two arguments:
 
 function removeArtist(array, index) {
   array.splice(index, 1);
-  return array;
+  console.log(array.length);
+  return array.length;
 }
 console.log(removeArtist(artists, -1));
 
@@ -316,7 +317,7 @@ For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte
 
 function lotsOfArt(array){
   let hundred = [];
-  for (i = 0 ; i < array.length; i++){
+  for (let i = 0 ; i < array.length; i++){
     if(array[i].paintings >= 100){
       hundred.push(array[i].name);
     }
