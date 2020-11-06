@@ -213,17 +213,11 @@ Practice accessing data above by console.log-ing following items:
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
-
 function changeName(array, index, name){
-  for(i in array){
-  if(array[i][index] === ["id"]){
-    array[i].name = name;
-  }
-  }
+  array[index].name = name;
   return array;
 }
 console.log(changeName(artists, 9, "Vincent Van Gogh"));
-
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Create a function called `getArtistByIndex` that takes two arguments:
  *     (1) artists array
@@ -290,14 +284,24 @@ nationality: Your Nationality Here
 bio: Add 1-2 sentences (or use lorem ipsum) 
 
 At the end, this function should return the new array with information added"*/
-function addArtist(arr, id, name, years, genre, nationality, bio){
-  let newArt = [];
-  for(i =0; i < arr.length; i++){
-    artists.push(id, name, years, genre, nationality, bio);
-    }
-  return arr;
+
+
+let jacob = {
+  id :20,
+  name:"Jacob Stephens",
+  years:"1998 - current",
+  genre:"modern",
+  nationality:"American",
+  bio:"im really hoping that this works"
+}
+
+function addArtist(array, artist){
+  array.push(artist);
+  return array;
   }
-console.log(addArtist(20, "Jacob Stephens", "1998 - current", "modern", "American", "im really hoping that this works"));
+
+console.log(addArtist(artists, jacob));
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Create a function called lotsOfArt() that takes one argument: 
