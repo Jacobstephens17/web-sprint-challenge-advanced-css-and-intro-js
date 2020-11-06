@@ -262,9 +262,10 @@ Create a function called `removeArtist` that takes two arguments:
  * For example, if removeArtist is invoked with the data and the number 0,
  * it will remove Amedeo Modigliani from our dataset and log the number 19.  
 */
-function removeArtist(artist, index) {
-  artist[index].pop();
-  return artist;
+
+function removeArtist(array, index) {
+  array.splice(index, 1);
+  return array;
 }
 console.log(removeArtist(artists, -1));
 
@@ -314,11 +315,13 @@ For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte
 
 
 function lotsOfArt(array){
-  for(i = 0; i < array.length; i++){
-    if(array[i]["paintings"] > [100]){
-    return (array[i]["name"]);
+  let hundred = [];
+  for (i = 0 ; i < array.length; i++){
+    if(array[i].paintings >= 100){
+      hundred.push(array[i].name);
     }
   }
+  return hundred;
 }
 console.log(lotsOfArt(artists));
 
