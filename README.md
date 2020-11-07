@@ -32,6 +32,7 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 3. How would you explain the concept of a variable to someone new to programming?
     A container holding a value that can be changed 
+    
 4. What is the purpose of using functions in code?
     functions are little mini blocks of code that can be run when called
 

@@ -263,13 +263,13 @@ Create a function called `removeArtist` that takes two arguments:
  * it will remove Amedeo Modigliani from our dataset and log the number 19.  
 */
 
+
 function removeArtist(array, index) {
   array.splice(index, 1);
   console.log(array.length);
   return array.length;
 }
 console.log(removeArtist(artists, -1));
-
 
 
 /**
